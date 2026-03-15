@@ -101,7 +101,9 @@ def main():
             r"Software\Microsoft\Windows\CurrentVersion\Run",
             0, winreg.KEY_SET_VALUE
         )
-        winreg.SetValueEx(key, APP_NAME, 0, winreg.REG_SZ, f'"{LAUNCHER}"')
+        # wscript.exe runs the VBS file silently (no console window)
+        run_cmd = f'wscript.exe "{LAUNCHER}"'
+        winreg.SetValueEx(key, APP_NAME, 0, winreg.REG_SZ, run_cmd)
         winreg.CloseKey(key)
         print("  Auto-startup configured in Windows Registry.")
     except Exception as e:
