@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Whisper model cache (large, user downloads on install)
+models/
+*.bin
+*.pt
+
+# Runtime files
+settings.json
+*.wav
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Windows
+Thumbs.db
+desktop.ini
